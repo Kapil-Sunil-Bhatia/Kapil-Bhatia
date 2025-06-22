@@ -1,53 +1,58 @@
-
-import React, { useState, useEffect } from 'react';
-import { Github, Linkedin, Mail, Download, ChevronDown } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import React, { useState, useEffect } from "react";
+import { Github, Linkedin, Mail, Download, ChevronDown } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const HeroSection = () => {
-  const [displayedText, setDisplayedText] = useState('');
+  const [displayedText, setDisplayedText] = useState("");
   const [skillIndex, setSkillIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
-  
+
   const skills = [
-    'Python Developer',
-    'Azure OpenAI Expert',
-    'Full Stack Engineer',
-    'GIS Specialist',
-    'Research Enthusiast',
-    'AI/ML Engineer'
+    "Python Developer",
+    "Azure OpenAI Expert",
+    "Full Stack Engineer",
+    "GIS",
+    "Research Enthusiast",
+    "AI/ML Engineer",
   ];
 
   useEffect(() => {
     const currentSkill = skills[skillIndex];
-    const timeout = setTimeout(() => {
-      if (!isDeleting) {
-        if (displayedText === currentSkill) {
-          setTimeout(() => setIsDeleting(true), 2000);
+    const timeout = setTimeout(
+      () => {
+        if (!isDeleting) {
+          if (displayedText === currentSkill) {
+            setTimeout(() => setIsDeleting(true), 2000);
+          } else {
+            setDisplayedText(currentSkill.slice(0, displayedText.length + 1));
+          }
         } else {
-          setDisplayedText(currentSkill.slice(0, displayedText.length + 1));
+          if (displayedText === "") {
+            setIsDeleting(false);
+            setSkillIndex((prev) => (prev + 1) % skills.length);
+          } else {
+            setDisplayedText(currentSkill.slice(0, displayedText.length - 1));
+          }
         }
-      } else {
-        if (displayedText === '') {
-          setIsDeleting(false);
-          setSkillIndex((prev) => (prev + 1) % skills.length);
-        } else {
-          setDisplayedText(currentSkill.slice(0, displayedText.length - 1));
-        }
-      }
-    }, isDeleting ? 50 : 100);
+      },
+      isDeleting ? 50 : 100
+    );
 
     return () => clearTimeout(timeout);
   }, [displayedText, skillIndex, isDeleting]);
 
   const scrollToNext = () => {
-    const nextSection = document.getElementById('education');
+    const nextSection = document.getElementById("education");
     if (nextSection) {
-      nextSection.scrollIntoView({ behavior: 'smooth' });
+      nextSection.scrollIntoView({ behavior: "smooth" });
     }
   };
 
   return (
-    <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <section
+      id="hero"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden"
+    >
       {/* Background Effects */}
       <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-blue-900/20 to-slate-900"></div>
       <div className="absolute inset-0">
@@ -100,15 +105,24 @@ const HeroSection = () => {
             <Download className="mr-2 h-4 w-4" />
             Download Resume
           </Button>
-          <Button variant="outline" className="border-blue-500 text-blue-400 hover:bg-blue-600 hover:text-white transition-all duration-300 hover:scale-105">
+          <Button
+            variant="outline"
+            className="border-blue-500 text-blue-400 hover:bg-blue-600 hover:text-white transition-all duration-300 hover:scale-105"
+          >
             <Github className="mr-2 h-4 w-4" />
             GitHub
           </Button>
-          <Button variant="outline" className="border-blue-500 text-blue-400 hover:bg-blue-600 hover:text-white transition-all duration-300 hover:scale-105">
+          <Button
+            variant="outline"
+            className="border-blue-500 text-blue-400 hover:bg-blue-600 hover:text-white transition-all duration-300 hover:scale-105"
+          >
             <Linkedin className="mr-2 h-4 w-4" />
             LinkedIn
           </Button>
-          <Button variant="outline" className="border-blue-500 text-blue-400 hover:bg-blue-600 hover:text-white transition-all duration-300 hover:scale-105">
+          <Button
+            variant="outline"
+            className="border-blue-500 text-blue-400 hover:bg-blue-600 hover:text-white transition-all duration-300 hover:scale-105"
+          >
             <Mail className="mr-2 h-4 w-4" />
             Contact
           </Button>
@@ -116,7 +130,7 @@ const HeroSection = () => {
 
         {/* Scroll Indicator */}
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
-          <button 
+          <button
             onClick={scrollToNext}
             className="flex flex-col items-center text-gray-400 hover:text-white transition-colors duration-300"
           >
