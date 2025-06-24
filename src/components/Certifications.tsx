@@ -1,14 +1,13 @@
-
-import React, { useState } from 'react';
-import { Award, ExternalLink } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import React, { useState } from "react";
+import { Award, ExternalLink } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogContent,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from '@/components/ui/dialog';
+} from "@/components/ui/dialog";
 
 const Certifications = () => {
   const certifications = [
@@ -18,7 +17,7 @@ const Certifications = () => {
       year: "2024",
       type: "Cloud Computing",
       color: "orange",
-      image: "/placeholder.svg" // Replace with actual certificate image path
+      image: "/1.jpg", // Replace with actual certificate image path
     },
     {
       title: "AI Hackathon Oracle Service Line",
@@ -26,7 +25,7 @@ const Certifications = () => {
       year: "2024",
       type: "Artificial Intelligence",
       color: "red",
-      image: "/placeholder.svg" // Replace with actual certificate image path
+      image: "/placeholder.svg", // Replace with actual certificate image path
     },
     {
       title: "Python and Java Spoken Tutorial",
@@ -34,7 +33,7 @@ const Certifications = () => {
       year: "2023",
       type: "Programming",
       color: "blue",
-      image: "/placeholder.svg" // Replace with actual certificate image path
+      image: "/placeholder.svg", // Replace with actual certificate image path
     },
     {
       title: "Complete Web Development Bootcamp",
@@ -42,8 +41,8 @@ const Certifications = () => {
       year: "2023",
       type: "Web Development",
       color: "green",
-      image: "/placeholder.svg" // Replace with actual certificate image path
-    }
+      image: "/placeholder.svg", // Replace with actual certificate image path
+    },
   ];
 
   const getColorClasses = (color: string) => {
@@ -51,7 +50,7 @@ const Certifications = () => {
       orange: "from-orange-500 to-red-500",
       red: "from-red-500 to-pink-500",
       blue: "from-blue-500 to-cyan-500",
-      green: "from-green-500 to-teal-500"
+      green: "from-green-500 to-teal-500",
     };
     return colorMap[color as keyof typeof colorMap] || colorMap.blue;
   };
@@ -65,7 +64,9 @@ const Certifications = () => {
               Certifications
             </span>
           </h2>
-          <p className="text-gray-400 text-lg">Continuous learning and professional development</p>
+          <p className="text-gray-400 text-lg">
+            Continuous learning and professional development
+          </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -74,18 +75,28 @@ const Certifications = () => {
               <DialogTrigger asChild>
                 <div className="group bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-xl p-6 hover:bg-slate-800/70 transition-all duration-300 hover:scale-105 hover:shadow-xl cursor-pointer">
                   <div className="text-center">
-                    <div className={`inline-flex p-4 rounded-full bg-gradient-to-r ${getColorClasses(cert.color)} mb-4`}>
+                    <div
+                      className={`inline-flex p-4 rounded-full bg-gradient-to-r ${getColorClasses(
+                        cert.color
+                      )} mb-4`}
+                    >
                       <Award className="h-8 w-8 text-white" />
                     </div>
-                    
+
                     <h3 className="text-lg font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">
                       {cert.title}
                     </h3>
-                    
-                    <p className="text-blue-400 font-semibold mb-1">{cert.provider}</p>
+
+                    <p className="text-blue-400 font-semibold mb-1">
+                      {cert.provider}
+                    </p>
                     <p className="text-gray-400 text-sm mb-3">{cert.year}</p>
-                    
-                    <span className={`inline-block px-3 py-1 rounded-full text-xs font-medium bg-gradient-to-r ${getColorClasses(cert.color)} text-white`}>
+
+                    <span
+                      className={`inline-block px-3 py-1 rounded-full text-xs font-medium bg-gradient-to-r ${getColorClasses(
+                        cert.color
+                      )} text-white`}
+                    >
                       {cert.type}
                     </span>
                   </div>
@@ -98,8 +109,8 @@ const Certifications = () => {
                   </DialogTitle>
                 </DialogHeader>
                 <div className="flex justify-center">
-                  <img 
-                    src={cert.image} 
+                  <img
+                    src={cert.image}
                     alt={`${cert.title} Certificate`}
                     className="max-w-full h-auto rounded-lg border border-slate-600"
                   />
