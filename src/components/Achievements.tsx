@@ -1,25 +1,26 @@
-
-import React from 'react';
-import { Trophy, Award, Star, Medal } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import React from "react";
+import { Trophy, Award, Star, Medal } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogContent,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from '@/components/ui/dialog';
+} from "@/components/ui/dialog";
 
 const Achievements = () => {
   const achievements = [
     {
-      title: "Special Prize Awardee for developing CivicSynergy Streamlining Housing Society Management System in INTECH 2K24",
-      organization: "Institution of Engineering and Technology (IET) Mumbai Local Network and K. J. Somaiya Institute of Technology",
+      title:
+        "Special Prize Awardee for developing CivicSynergy Streamlining Housing Society Management System in INTECH 2K24",
+      organization:
+        "Institution of Engineering and Technology (IET) Mumbai Local Network and K. J. Somaiya Institute of Technology",
       date: "02/2024",
       type: "Competition Award",
       icon: Trophy,
       color: "yellow",
-      image: "/placeholder.svg" // Replace with actual certificate image path
+      image: "/placeholder.svg", // Replace with actual certificate image path
     },
     {
       title: "Student Champion of the Year",
@@ -28,16 +29,17 @@ const Achievements = () => {
       type: "Leadership Award",
       icon: Star,
       color: "purple",
-      image: "/placeholder.svg" // Replace with actual certificate image path
+      image: "/placeholder.svg", // Replace with actual certificate image path
     },
     {
-      title: "Letter of Appreciation for developing websites: Virtual Lab of Operating Systems; KJSIT's Stakeholders Feedback Analysis Portal; CivicSynergy: Streamlining Housing Society Management System",
+      title:
+        "Letter of Appreciation for developing websites: Virtual Lab of Operating Systems; KJSIT's Stakeholders Feedback Analysis Portal; CivicSynergy: Streamlining Housing Society Management System",
       organization: "K. J. Somaiya Institute of Technology, Sion, Mumbai",
       date: "10/2023",
       type: "Recognition",
       icon: Award,
       color: "blue",
-      image: "/placeholder.svg" // Replace with actual certificate image path
+      image: "/placeholder.svg", // Replace with actual certificate image path
     },
     {
       title: "Topped the class XII in my college – Board Examination",
@@ -46,8 +48,8 @@ const Achievements = () => {
       type: "Academic Excellence",
       icon: Medal,
       color: "green",
-      image: "/placeholder.svg" // Replace with actual certificate image path
-    }
+      image: "/placeholder.svg", // Replace with actual certificate image path
+    },
   ];
 
   const getColorClasses = (color: string) => {
@@ -55,7 +57,7 @@ const Achievements = () => {
       yellow: "from-yellow-500 to-orange-500",
       purple: "from-purple-500 to-pink-500",
       blue: "from-blue-500 to-cyan-500",
-      green: "from-green-500 to-teal-500"
+      green: "from-green-500 to-teal-500",
     };
     return colorMap[color as keyof typeof colorMap] || colorMap.blue;
   };
@@ -65,7 +67,7 @@ const Achievements = () => {
       yellow: "text-yellow-400",
       purple: "text-purple-400",
       blue: "text-blue-400",
-      green: "text-green-400"
+      green: "text-green-400",
     };
     return colorMap[color as keyof typeof colorMap] || colorMap.blue;
   };
@@ -79,7 +81,9 @@ const Achievements = () => {
               Awards & Recognition
             </span>
           </h2>
-          <p className="text-gray-400 text-lg">Celebrating excellence and outstanding contributions</p>
+          <p className="text-gray-400 text-lg">
+            Celebrating excellence and outstanding contributions
+          </p>
         </div>
 
         <div className="space-y-8">
@@ -89,23 +93,37 @@ const Achievements = () => {
               className="group bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-xl p-6 hover:bg-slate-800/70 transition-all duration-300 hover:scale-105"
             >
               <div className="flex items-start space-x-6">
-                <div className={`p-4 rounded-full bg-gradient-to-r ${getColorClasses(achievement.color)} flex-shrink-0`}>
+                <div
+                  className={`p-4 rounded-full bg-gradient-to-r ${getColorClasses(
+                    achievement.color
+                  )} flex-shrink-0`}
+                >
                   <achievement.icon className="h-8 w-8 text-white" />
                 </div>
-                
+
                 <div className="flex-1">
                   <div className="flex items-start justify-between mb-3">
                     <div className="flex-1">
                       <h3 className="text-xl font-bold text-white mb-2 leading-tight group-hover:text-blue-400 transition-colors">
                         {achievement.title}
                       </h3>
-                      <p className={`font-semibold mb-1 ${getIconColor(achievement.color)}`}>
+                      <p
+                        className={`font-semibold mb-1 ${getIconColor(
+                          achievement.color
+                        )}`}
+                      >
                         {achievement.organization}
                       </p>
                     </div>
                     <div className="text-right flex flex-col items-end space-y-2">
-                      <div className="text-gray-400 text-sm">{achievement.date}</div>
-                      <span className={`inline-block px-3 py-1 rounded-full text-xs font-semibold bg-gradient-to-r ${getColorClasses(achievement.color)} text-white`}>
+                      <div className="text-gray-400 text-sm">
+                        {achievement.date}
+                      </div>
+                      <span
+                        className={`inline-block px-3 py-1 rounded-full text-xs font-semibold bg-gradient-to-r ${getColorClasses(
+                          achievement.color
+                        )} text-white`}
+                      >
                         {achievement.type}
                       </span>
                       <Dialog>
@@ -113,7 +131,7 @@ const Achievements = () => {
                           <Button
                             variant="outline"
                             size="sm"
-                            className="text-blue-400 border-blue-400 hover:bg-blue-400 hover:text-white mt-2"
+                            className="text-blue-400 bg-slate-800/30 border-blue-400 hover:bg-blue-400 hover:text-white mt-2"
                           >
                             View Certificate
                           </Button>
@@ -125,8 +143,8 @@ const Achievements = () => {
                             </DialogTitle>
                           </DialogHeader>
                           <div className="flex justify-center">
-                            <img 
-                              src={achievement.image} 
+                            <img
+                              src={achievement.image}
                               alt={`${achievement.title} Certificate`}
                               className="max-w-full h-auto rounded-lg border border-slate-600"
                             />

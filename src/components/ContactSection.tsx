@@ -1,33 +1,42 @@
-
-import React, { useState } from 'react';
-import { Mail, Phone, Linkedin, Github, MapPin, Send, CheckCircle } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
+import React, { useState } from "react";
+import {
+  Mail,
+  Phone,
+  Linkedin,
+  Github,
+  MapPin,
+  Send,
+  CheckCircle,
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData(prev => ({
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setFormData((prev) => ({
       ...prev,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     }));
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Here you would typically send the form data to your backend
-    console.log('Form submitted:', formData);
+    console.log("Form submitted:", formData);
     setIsSubmitted(true);
     setTimeout(() => setIsSubmitted(false), 3000);
-    setFormData({ name: '', email: '', subject: '', message: '' });
+    setFormData({ name: "", email: "", subject: "", message: "" });
   };
 
   const contactInfo = [
@@ -36,36 +45,36 @@ const ContactSection = () => {
       label: "Phone",
       value: "+91 77108 86248",
       link: "tel:+917710886248",
-      color: "green"
+      color: "green",
     },
     {
       icon: Mail,
       label: "Email",
-      value: "ksbcelll2@gmail.com",
-      link: "mailto:ksbcelll2@gmail.com",
-      color: "blue"
+      value: "ksbcell12@gmail.com",
+      link: "mailto:ksbcell12@gmail.com",
+      color: "blue",
     },
     {
       icon: Linkedin,
       label: "LinkedIn",
       value: "linkedin.com/in/kapil-bhatia-06b565242",
       link: "https://linkedin.com/in/kapil-bhatia-06b565242",
-      color: "blue"
+      color: "blue",
     },
     {
       icon: Github,
       label: "GitHub",
       value: "github.com/Kapil-Sunil-Bhatia",
       link: "https://github.com/Kapil-Sunil-Bhatia",
-      color: "gray"
+      color: "gray",
     },
     {
       icon: MapPin,
       label: "Location",
       value: "Navi Mumbai, Maharashtra",
       link: "",
-      color: "red"
-    }
+      color: "red",
+    },
   ];
 
   const getColorClasses = (color: string) => {
@@ -73,7 +82,7 @@ const ContactSection = () => {
       green: "bg-green-500/20 text-green-400",
       blue: "bg-blue-500/20 text-blue-400",
       gray: "bg-gray-500/20 text-gray-400",
-      red: "bg-red-500/20 text-red-400"
+      red: "bg-red-500/20 text-red-400",
     };
     return colorMap[color as keyof typeof colorMap] || colorMap.blue;
   };
@@ -87,17 +96,23 @@ const ContactSection = () => {
               Get In Touch
             </span>
           </h2>
-          <p className="text-gray-400 text-lg">Let's collaborate on innovative projects and research opportunities</p>
+          <p className="text-gray-400 text-lg">
+            Let's collaborate on innovative projects and research opportunities
+          </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Information */}
           <div>
-            <h3 className="text-2xl font-bold text-white mb-8">Contact Information</h3>
+            <h3 className="text-2xl font-bold text-white mb-8">
+              Contact Information
+            </h3>
             <div className="space-y-6">
               {contactInfo.map((info, index) => (
                 <div key={index} className="flex items-center space-x-4">
-                  <div className={`p-3 rounded-lg ${getColorClasses(info.color)}`}>
+                  <div
+                    className={`p-3 rounded-lg ${getColorClasses(info.color)}`}
+                  >
                     <info.icon size={20} />
                   </div>
                   <div>
@@ -121,7 +136,9 @@ const ContactSection = () => {
 
             {/* ORCID */}
             <div className="mt-8 p-6 bg-slate-800/50 rounded-xl border border-slate-700">
-              <h4 className="text-lg font-semibold text-white mb-2">Academic Profile</h4>
+              <h4 className="text-lg font-semibold text-white mb-2">
+                Academic Profile
+              </h4>
               <p className="text-gray-400 text-sm mb-2">ORCID</p>
               <a
                 href="https://orcid.org/0009-0003-2930-3179"
@@ -136,7 +153,9 @@ const ContactSection = () => {
 
           {/* Contact Form */}
           <div>
-            <h3 className="text-2xl font-bold text-white mb-8">Send a Message</h3>
+            <h3 className="text-2xl font-bold text-white mb-8">
+              Send a Message
+            </h3>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
@@ -162,7 +181,7 @@ const ContactSection = () => {
                   />
                 </div>
               </div>
-              
+
               <div>
                 <Input
                   type="text"
@@ -174,7 +193,7 @@ const ContactSection = () => {
                   className="bg-slate-800/50 border-slate-600 text-white placeholder:text-gray-400 focus:border-blue-500"
                 />
               </div>
-              
+
               <div>
                 <Textarea
                   name="message"
@@ -186,7 +205,7 @@ const ContactSection = () => {
                   className="bg-slate-800/50 border-slate-600 text-white placeholder:text-gray-400 focus:border-blue-500 resize-none"
                 />
               </div>
-              
+
               <Button
                 type="submit"
                 className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 transition-all duration-300"
@@ -214,17 +233,25 @@ const ContactSection = () => {
             © 2024 Kapil Bhatia. All rights reserved.
           </p>
           <div className="flex justify-center space-x-6">
-            {contactInfo.filter(info => info.link && info.label !== 'Phone' && info.label !== 'Email' && info.label !== 'Location').map((social, index) => (
-              <a
-                key={index}
-                href={social.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors"
-              >
-                <social.icon size={24} />
-              </a>
-            ))}
+            {contactInfo
+              .filter(
+                (info) =>
+                  info.link &&
+                  info.label !== "Phone" &&
+                  info.label !== "Email" &&
+                  info.label !== "Location"
+              )
+              .map((social, index) => (
+                <a
+                  key={index}
+                  href={social.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
+                  <social.icon size={24} />
+                </a>
+              ))}
           </div>
         </div>
       </div>
