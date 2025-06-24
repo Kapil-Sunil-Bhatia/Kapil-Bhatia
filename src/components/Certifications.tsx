@@ -17,7 +17,7 @@ const Certifications = () => {
       year: "2024",
       type: "Cloud Computing",
       color: "orange",
-      image: "/1.jpg", // Replace with actual certificate image path
+      image: "/placeholder.svg", // Replace with actual certificate image path
     },
     {
       title: "AI Hackathon Oracle Service Line",
