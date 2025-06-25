@@ -17,33 +17,55 @@ const Certifications = () => {
       year: "2024",
       type: "Cloud Computing",
       color: "orange",
-      image: "/placeholder.svg", // Replace with actual certificate image path
+      image: "/certs/AWS-cloud-computing-cert.jpg", // Replace with actual certificate image path
+    },
+    {
+      title: "Complete Web Development Bootcamp",
+      provider: "Udemy (Angela Yu)",
+      year: "2024",
+      type: "Web Development",
+      color: "red",
+      image: "/", // Replace with actual certificate image path
+    },
+    {
+      title: "EC Council Certified Ethical Hacker (CEH)",
+      provider: "EC-Council",
+      year: "2024",
+      type: "Ethical Hacking",
+      color: "blue",
+      image: "/certs/EC-Council-cert.jpg", // Replace with actual certificate image path
     },
     {
       title: "AI Hackathon Oracle Service Line",
       provider: "Mastek",
       year: "2024",
-      type: "Artificial Intelligence",
-      color: "red",
-      image: "/placeholder.svg", // Replace with actual certificate image path
-    },
-    {
-      title: "Python and Java Spoken Tutorial",
-      provider: "IIT Bombay",
-      year: "2023",
-      type: "Programming",
-      color: "blue",
-      image: "/placeholder.svg", // Replace with actual certificate image path
-    },
-    {
-      title: "Complete Web Development Bootcamp",
-      provider: "Udemy (Angela Yu)",
-      year: "2023",
-      type: "Web Development",
+      type: "Artificial Intelligence and Generative AI",
       color: "green",
-      image: "/placeholder.svg", // Replace with actual certificate image path
+      image: "/certs/mastek-hackathon-cert.png", // Replace with actual certificate image path
+    },
+    {
+      title: "Java Spoken Tutorial",
+      provider: "IIT Bombay",
+      year: "2022",
+      type: "Java Programming",
+      color: "red",
+      image: "/certs/java-spoken-cert.jpg", // Replace with actual certificate image path
+    },
+    {
+      title: "Python Spoken Tutorial",
+      provider: "IIT Bombay",
+      year: "2022",
+      type: "Python Programming",
+      color: "blue",
+      image: "/certs/python-spoken-cert.jpg", // Replace with actual certificate image path
     },
   ];
+
+  // orange red blue green
+  // red blue green orange
+  // blue green orange red
+  // green orange red blue
+  // orange red blue green
 
   const getColorClasses = (color: string) => {
     const colorMap = {

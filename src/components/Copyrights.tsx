@@ -27,7 +27,7 @@ const Copyrights = () => {
       type: "Software",
       description:
         "An intelligent OCR system designed for automated certificate management and data extraction, streamlining administrative processes in educational institutions.",
-      image: "/placeholder.svg", // Replace with actual certificate image path
+      image: "/copyrights/copyright-ocr.jpg", // Replace with actual certificate image path
     },
     {
       title: "Software of CivicSynergy Streamlining Housing Society Management",
@@ -36,7 +36,7 @@ const Copyrights = () => {
       type: "Software",
       description:
         "Comprehensive housing society management software that handles resident records, maintenance payments, complaints, and visitor management for enhanced community governance.",
-      image: "/placeholder.svg", // Replace with actual certificate image path
+      image: "/copyrights/copyright-moraj.jpg", // Replace with actual certificate image path
     },
     {
       title: "User Manual of Virtual Lab of Operating Systems",
@@ -45,7 +45,7 @@ const Copyrights = () => {
       type: "Manual",
       description:
         "Detailed user manual for the virtual operating systems lab, providing comprehensive guidance for students and educators on utilizing the interactive learning platform.",
-      image: "/placeholder.svg", // Replace with actual certificate image path
+      image: "/copyrights/copyright-vlab.jpg", // Replace with actual certificate image path
     },
     {
       title: "User Manual of KJSIT's Stakeholders Feedback Analysis Portal",
@@ -54,7 +54,7 @@ const Copyrights = () => {
       type: "Manual",
       description:
         "User guide for the stakeholder feedback analysis portal, enabling effective collection and analysis of institutional feedback for accreditation and improvement purposes.",
-      image: "/placeholder.svg", // Replace with actual certificate image path
+      image: "/copyrights/copyright-feedback.jpg", // Replace with actual certificate image path
     },
   ];
 
@@ -163,13 +163,22 @@ const Copyrights = () => {
                   </div>
                 </div>
 
-                {expandedItems.includes(index) && (
-                  <div className="mt-4 pt-4 border-t border-slate-700">
-                    <p className="text-gray-300 leading-relaxed">
-                      {item.description}
-                    </p>
-                  </div>
-                )}
+                <div
+                  className={`transition-all duration-300 overflow-hidden ${
+                    expandedItems.includes(index)
+                      ? "max-h-40 opacity-100 mt-4 pt-4 border-t border-slate-700"
+                      : "max-h-0 opacity-0"
+                  }`}
+                  style={{
+                    // fallback for maxHeight if content is larger
+                    transitionProperty:
+                      "max-height, opacity, margin-top, padding-top",
+                  }}
+                >
+                  <p className="text-gray-300 leading-relaxed">
+                    {item.description}
+                  </p>
+                </div>
               </div>
             </div>
           ))}

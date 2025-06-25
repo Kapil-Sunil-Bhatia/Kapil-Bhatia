@@ -13,10 +13,10 @@ const Publications = () => {
         "Scopus-indexed IAES International Journal of Artificial Intelligence (IJ-AI)",
       date: "04/2025",
       status: "Published",
-      type: "Research Paper",
+      type: "Scopus Indexed Research Paper",
       abstract:
-        "This research focuses on developing advanced sign language detection systems using LSTM neural networks to enhance accessibility for the deaf and hard-of-hearing community. The system demonstrates significant improvements in accuracy and real-time processing capabilities.",
-      link: "#",
+        "Individuals who are deaf or experience difficulties with hearing and speech predominantly rely on sign language as their medium to communicate, which is not universally comprehended leading to obstacles in achieving effective communication. Advances in deep learning technologies in recent years have enabled the development of systems intended to autonomously interpret gestures in sign language and translate them into spoken language. This paper introduces a system built on deep learning methodologies for recognizing sign language. It uses long short-term memory (LSTM) architecture to distinguish and classify hand gestures which are static and dynamic. The system is divided into three primary components, including dataset collection, neural network assessment, and sign detection component that encompasses hand gesture extraction and sign language classification. The module to extract hand gestures makes use of recurrent neural networks (RNNs) for the detection and tracking of hand movements in video sequences. Another RNN that is incorporated by classification module categorizes these gestures into established sign language classes. Upon evaluation on a custom dataset, the proposed system attains an accuracy rate of 99.42%, thus making it visualize its promise as an assistive technology for handicapped hearing individuals. This system can further be enhanced by including further classes on sign language and real-time gesture interpretation.",
+      link: "https://doi.org/10.11591/ijai.v14.i2.pp1355-1362",
       color: "blue",
     },
     {
@@ -26,10 +26,10 @@ const Publications = () => {
         "Scopus-indexed Journal of Information Technology Education: Innovations in Practice (JITE:IIP)",
       date: "11/2024",
       status: "Published",
-      type: "Educational Technology",
+      type: "Scopus Indexed Research Paper",
       abstract:
-        "Presents an innovative virtual simulation tool designed to enhance operating systems education through interactive learning experiences. The tool provides students with hands-on experience in OS concepts without requiring physical hardware.",
-      link: "#",
+        "This paper introduces an innovative online e-learning tool designed to enhance the teaching and understanding of complex operating system algorithms in engineering education. Traditional teaching methods often fall short in effectively conveying intricate algorithmic concepts. To bridge this gap, the developed tool offers interactive simulations for 13 key operating system algorithms, including Process Scheduling, Disk Scheduling, and Banker’s Algorithm. These simulations provide visual, hands-on learning experiences, aiding student comprehension and engagement. Developing the tool involved overcoming challenges such as implementing step-by-step computations, managing edge cases, generating dynamic visualizations like Gantt charts and disk scheduling graphs, and ensuring robust input validation and user customization. Despite its effectiveness, the tool has limitations. For example, the Process Scheduling module lacks context switching overhead modeling, and Disk Scheduling could benefit from additional evaluation metrics like fairness and starvation avoidance. The Banker’s Algorithm simulator may be further enhanced to handle deadlocks and resource exhaustion. An analysis of feedback from 276 students showed significant improvements in understanding and interest, highlighting the tool’s impact on learning outcomes. Educators are encouraged to integrate this tool into their curriculum to foster deeper learning. Researchers are recommended to expand its algorithmic coverage and explore its applicability in other computer science areas. Operating system algorithms are essential for creating efficient and secure systems that support modern life. By equipping students with practical algorithmic knowledge, this tool contributes to societal advancement through better software development. Future research should explore similar e-learning tools across various engineering disciplines and assess their educational effectiveness.",
+      link: "https://doi.org/10.28945/5404",
       color: "green",
     },
     {
@@ -41,8 +41,8 @@ const Publications = () => {
       status: "Published",
       type: "Conference Paper",
       abstract:
-        "Explores advanced data analytics techniques for stakeholder feedback analysis, providing insights into improving institutional processes and decision-making through comprehensive data interpretation methodologies.",
-      link: "#",
+        "Feedback collection and its report generation is an important aspect of any organization to improve its effectiveness by analyzing the responses received from its stakeholders. It helps to improve their operation and better serve their stakeholders. Traditionally, many institutions opted for manual report generation from the feedbacks received from their stakeholders using Google Forms which generated reports on the basis of static data collected after the successful submission of the google forms. However, this approach lacks efficiency and flexibility in analyzing stakeholder responses. The Stakeholders Feedback Analysis is a platform developed to ease the feedback collection and report generation process. It collects feedbacks from the stakeholders and generates reports dynamically using a data analysis tool which aids organizations to gain valuable insights into stakeholder preferences, concerns, and areas for improvement. The dynamic capabilities of the platform and its integration with data analysis tool underscore its significance in fostering transparency, accountability, and stakeholder satisfaction within organizations.",
+      link: "https://doi.org/10.1109/innocomp63224.2024.00060",
       color: "purple",
     },
     {
@@ -51,11 +51,11 @@ const Publications = () => {
       journal:
         "UGC CARE recognized South India Journal of Social Sciences (in Print Mode)",
       date: "05/2024",
-      status: "Published",
+      status: "Press Print",
       type: "Social Technology",
       abstract:
-        "Investigates the implementation of smart technologies in housing society management, focusing on community empowerment through digital transformation and improved governance structures.",
-      link: "#",
+        "The Housing Society Management System (HSMS) is an innovative online platform that transforms residential community management. It uses modern web technology to simplify administrative tasks and improve residents’ experiences. The system is a central hub for storing resident information, managing maintenance activities, and facilitating communication. Admins have powerful tools that help them manage housing society operations efficiently. By storing resident data in a centralized place, the system makes it easy to access important information, which helps with decision-making and strengthens community involvement. The HSMS enhances communication within communities. It provides tools that allow residents, administrators, and providers to stay informed. These tools make sure that important updates and announcements reach everyone effectively. The HSMS emphasizes efficiency and transparency, leading to greater resident satisfaction. By utilizing the latest technologies, it modernizes residential community management, improving the quality of life for residents in the digital age.",
+      link: "https://drive.google.com/file/d/1KkPZ5phn3AqustU3Ygx3kUURq33MjkTc/view",
       color: "cyan",
     },
   ];
@@ -131,16 +131,24 @@ const Publications = () => {
                   </div>
 
                   {/* Abstract Preview */}
-                  {selectedPaper === index && (
-                    <div className="bg-slate-700/30 rounded-lg p-4 mb-4 border-l-4 border-blue-500">
-                      <h4 className="text-base sm:text-lg font-semibold text-white mb-2">
-                        Abstract
-                      </h4>
-                      <p className="text-gray-300 leading-relaxed text-sm sm:text-base">
-                        {paper.abstract}
-                      </p>
-                    </div>
-                  )}
+                  <div
+                    style={{
+                      maxHeight: selectedPaper === index ? 500 : 0,
+                      opacity: selectedPaper === index ? 1 : 0,
+                      marginBottom: selectedPaper === index ? 16 : 0,
+                      transition:
+                        "max-height 0.4s cubic-bezier(0.4,0,0.2,1), opacity 0.3s, margin-bottom 0.3s",
+                      overflow: "hidden",
+                    }}
+                    className="bg-slate-700/30 rounded-lg p-4 border-l-4 border-blue-500"
+                  >
+                    <h4 className="text-base sm:text-lg font-semibold text-white mb-2">
+                      Abstract
+                    </h4>
+                    <p className="text-gray-300 leading-relaxed text-sm sm:text-base text-justify">
+                      {paper.abstract}
+                    </p>
+                  </div>
                 </div>
 
                 {/* Action Buttons */}
@@ -176,7 +184,7 @@ const Publications = () => {
         <div className="mt-12 sm:mt-16 grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-8">
           <div className="text-center bg-slate-800/50 rounded-xl p-4 sm:p-6 border border-slate-700">
             <div className="text-2xl sm:text-3xl font-bold text-blue-400 mb-2">
-              4+
+              4
             </div>
             <div className="text-gray-300 text-sm sm:text-base">
               Published Papers
@@ -184,7 +192,7 @@ const Publications = () => {
           </div>
           <div className="text-center bg-slate-800/50 rounded-xl p-4 sm:p-6 border border-slate-700">
             <div className="text-2xl sm:text-3xl font-bold text-green-400 mb-2">
-              3
+              2
             </div>
             <div className="text-gray-300 text-sm sm:text-base">
               Scopus Indexed

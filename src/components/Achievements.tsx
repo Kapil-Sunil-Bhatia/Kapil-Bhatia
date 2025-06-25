@@ -29,7 +29,7 @@ const Achievements = () => {
       type: "Leadership Award",
       icon: Star,
       color: "purple",
-      image: "/placeholder.svg", // Replace with actual certificate image path
+      image: "/awards-loa/iet-student-champion.jpeg", // Replace with actual certificate image path
     },
     {
       title:

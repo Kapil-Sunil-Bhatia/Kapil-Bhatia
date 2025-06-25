@@ -11,7 +11,7 @@ const HeroSection = () => {
     "Python Developer",
     "Azure OpenAI Expert",
     "Full Stack Engineer",
-    "GIS",
+    "GIS Specialist",
     "Research Enthusiast",
     "AI/ML Engineer",
   ];
@@ -101,30 +101,59 @@ const HeroSection = () => {
 
         {/* Action Buttons */}
         <div className="flex flex-wrap justify-center gap-4 mb-12">
-          <Button className="bg-blue-600 hover:bg-blue-700 transition-all duration-300 hover:scale-105">
-            <Download className="mr-2 h-4 w-4" />
-            Download Resume
-          </Button>
           <Button
+            asChild
+            className="bg-blue-600 hover:bg-blue-700 transition-all duration-300 hover:scale-105"
+          >
+            <a href="/cc.pdf" target="_blank" rel="noopener noreferrer">
+              <Download className="mr-2 h-4 w-4" />
+              Download Resume
+            </a>
+          </Button>
+
+          <Button
+            asChild
+            variant="outline"
+            className="border-blue-500 text-blue-400 hover:bg-gray-900 hover:border-gray-700 hover:text-white transition-all duration-300 hover:scale-105"
+          >
+            <a
+              href="https://github.com/Kapil-Sunil-Bhatia/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Github className="mr-2 h-4 w-4" />
+              GitHub
+            </a>
+          </Button>
+
+          <Button
+            asChild
+            variant="outline"
+            className="border-blue-500 text-blue-400 hover:bg-[#0a66c2] hover:text-white transition-all duration-300 hover:scale-105"
+          >
+            <a
+              href="https://www.linkedin.com/in/kapil-bhatia-06b565242/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Linkedin className="mr-2 h-4 w-4" />
+              LinkedIn
+            </a>
+          </Button>
+
+          <Button
+            asChild
             variant="outline"
             className="border-blue-500 text-blue-400 hover:bg-blue-600 hover:text-white transition-all duration-300 hover:scale-105"
           >
-            <Github className="mr-2 h-4 w-4" />
-            GitHub
-          </Button>
-          <Button
-            variant="outline"
-            className="border-blue-500 text-blue-400 hover:bg-blue-600 hover:text-white transition-all duration-300 hover:scale-105"
-          >
-            <Linkedin className="mr-2 h-4 w-4" />
-            LinkedIn
-          </Button>
-          <Button
-            variant="outline"
-            className="border-blue-500 text-blue-400 hover:bg-blue-600 hover:text-white transition-all duration-300 hover:scale-105"
-          >
-            <Mail className="mr-2 h-4 w-4" />
-            Contact
+            <a
+              href="mailto:ksbcell12@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Mail className="mr-2 h-4 w-4" />
+              Contact
+            </a>
           </Button>
         </div>
 
