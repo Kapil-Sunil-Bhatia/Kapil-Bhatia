@@ -13,6 +13,17 @@ const Achievements = () => {
   const achievements = [
     {
       title:
+        "Letter of Appreciation for Conduction workshop entitled 'From Concept to Deployment: Building Scalable Applications'",
+      organization:
+        "Institution of Engineering and Technology (IET) Mumbai Local Network and K. J. Somaiya Institute of Technology",
+      date: "09/2024",
+      type: "Recognition",
+      icon: Award,
+      color: "yellow",
+      image: "/awards-loa/INTECH-2024-win.jpg", // Replace with actual certificate image path
+    },
+    {
+      title:
         "Special Prize Awardee for developing CivicSynergy Streamlining Housing Society Management System in INTECH 2K24",
       organization:
         "Institution of Engineering and Technology (IET) Mumbai Local Network and K. J. Somaiya Institute of Technology",
@@ -20,7 +31,7 @@ const Achievements = () => {
       type: "Competition Award",
       icon: Trophy,
       color: "yellow",
-      image: "/placeholder.svg", // Replace with actual certificate image path
+      image: "/awards-loa/INTECH-2024-win.jpg", // Replace with actual certificate image path
     },
     {
       title: "Student Champion of the Year",
@@ -48,7 +59,7 @@ const Achievements = () => {
       type: "Academic Excellence",
       icon: Medal,
       color: "green",
-      image: "/placeholder.svg", // Replace with actual certificate image path
+      image: "/awards-loa/12th-first.jpg", // Replace with actual certificate image path
     },
   ];
 
