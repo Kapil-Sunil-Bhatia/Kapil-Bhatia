@@ -14,8 +14,7 @@ const Achievements = () => {
     {
       title:
         "Letter of Appreciation for Conduction workshop entitled 'From Concept to Deployment: Building Scalable Applications'",
-      organization:
-        "Institution of Engineering and Technology (IET) Mumbai Local Network and K. J. Somaiya Institute of Technology",
+      organization: "K. J. Somaiya Institute of Technology, Sion, Mumbai",
       date: "09/2024",
       type: "Recognition",
       icon: Award,
