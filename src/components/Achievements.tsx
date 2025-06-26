@@ -19,7 +19,7 @@ const Achievements = () => {
       type: "Recognition",
       icon: Award,
       color: "yellow",
-      image: "/awards-loa/INTECH-2024-win.jpg", // Replace with actual certificate image path
+      image: "/awards-loa/loa-sql-session.jpeg", // Replace with actual certificate image path
     },
     {
       title:
