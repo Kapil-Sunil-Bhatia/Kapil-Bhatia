@@ -76,7 +76,7 @@ const HeroSection = () => {
         {/* Animated Name */}
         <h1 className="text-5xl md:text-7xl font-bold mb-4 animate-fade-in">
           <span className="bg-gradient-to-r from-white via-blue-200 to-cyan-300 bg-clip-text text-transparent">
-            Kapil Bhatia
+            Kapil Sunil Bhatia
           </span>
         </h1>
 
@@ -105,7 +105,11 @@ const HeroSection = () => {
             asChild
             className="bg-blue-600 hover:bg-blue-700 transition-all duration-300 hover:scale-105"
           >
-            <a href="/cc.pdf" target="_blank" rel="noopener noreferrer">
+            <a
+              href="/public/Resume/Kapil Bhatia 21-6-25.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Download className="mr-2 h-4 w-4" />
               Download Resume
             </a>
