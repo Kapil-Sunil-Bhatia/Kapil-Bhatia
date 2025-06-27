@@ -95,7 +95,7 @@ I'm a Computer Engineering student with a passion for **AI, full-stack web devel
 
 ![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=Kapil-Sunil-Bhatia&layout=compact&theme=github_dark&hide_border=true)
 
-![Kapil's Contribution Graph](https://github-readme-activity-graph.cyclic.app/graph?username=Kapil-Sunil-Bhatia&theme=github-compact)
+[![Kapil's GitHub Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=Kapil-Sunil-Bhatia&theme=github-compact)](https://github.com/Ashutosh00710/github-readme-activity-graph)
 
 </div>
 
